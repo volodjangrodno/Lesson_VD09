@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="text-center mt-5">
+        <h1 class="display-4">Хамстер-Кликер!</h1>
+        <p class="lead">Количество кликов - {{ current_user.clicks }}</p>
+        <div>
+            <a href="{{ url_for('click') }}">
+                <img src="{{ url_for('static', filename='images/humster.jpg') }}" class="img-fluid" style="max-width: 200px;"><br>
+                Кликни меня скорей!
+            </a>
+        </div>
+    </div>
+{% endblock %}
